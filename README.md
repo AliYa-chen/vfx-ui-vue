@@ -56,8 +56,9 @@ Machine-readable docs: [`public/llms.txt`](apps/docs/public/llms.txt), [`public/
 ```bash
 pnpm install
 pnpm -r typecheck && pnpm -r test   # deterministic tests incl. Dawn pixel readback
-pnpm -r build
-pnpm dev:docs                        # catalog at localhost:5173
+pnpm build                           # production site -> dist/
+pnpm dev                             # Vite catalog at localhost:5173
+pnpm build:all                       # packages + production site
 node registry/build.mjs              # rebuild copy-paste registry from sources
 node registry/validate.mjs           # compile every standalone Vue TSX bundle
 node scripts/generate-agentic.mjs    # rebuild llms.txt / agents.md
@@ -74,16 +75,20 @@ copy-paste registry, and agent documentation. Local edits must be committed and
 pushed to trigger an update. Preview branch deployments are disabled.
 
 Pages build settings: repository root, Node.js `22`, pnpm `8.15.9`, output
-`apps/docs/dist`, and this build command:
+`dist`, and this build command:
 
 ```sh
-node registry/build.mjs && node scripts/generate-agentic.mjs && mkdir -p apps/docs/public/r && cp registry/dist/r/*.json apps/docs/public/r/ && cp registry/dist/index.json apps/docs/public/r/index.json && pnpm --filter @vfx-ui-vue/docs build
+pnpm run build
 ```
 
 The `Check docs build` GitHub workflow validates builds; Cloudflare handles
 publishing through its GitHub integration without a GitHub Actions API token.
 Custom domains are configured in Pages and use proxied CNAME records pointing
 to `vfx-ui-vue.pages.dev`. This is the sole Pages project for this website.
+
+For EdgeOne Pages, import the repository and keep the project root at `./`.
+The committed `edgeone.json` fixes the production settings to Node.js `22.17.1`,
+`pnpm run build`, output directory `dist`, and an SPA fallback to `index.html`.
 
 ## License & credits
 

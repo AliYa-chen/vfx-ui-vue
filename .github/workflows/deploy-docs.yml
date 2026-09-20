@@ -51,28 +51,8 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      # Rebuild the copy-paste registry from live component sources so the
-      # served catalog can never drift from the published package.
-      - name: Build registry
-        run: node registry/build.mjs
-
-      - name: Validate registry bundles
-        run: node registry/validate.mjs
-
-      # llms.txt, agents.md, and one .md per component — consumed by coding agents.
-      - name: Generate agentic docs
-        run: node scripts/generate-agentic.mjs
-
-      # Serve the shadcn-format registry at vfx.2t.hk/r/<name>.json, which is
-      # the DEFAULT_REGISTRY the CLI fetches from (packages/cli/bin/cli.mjs).
-      - name: Stage registry into docs site
-        run: |
-          mkdir -p apps/docs/public/r
-          cp registry/dist/r/*.json apps/docs/public/r/
-          cp registry/dist/index.json apps/docs/public/r/index.json
-
       - name: Build docs site
-        run: pnpm --filter @vfx-ui-vue/docs build
+        run: pnpm run build
 
       # Cloudflare Pages builds and deploys main through its GitHub integration.
       # This workflow checks the same build without requiring deployment secrets.

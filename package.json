@@ -9,14 +9,26 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "pnpm -r build",
+    "dev": "vite apps/docs",
+    "build": "node scripts/prepare-site.mjs && pnpm --filter @vfx-ui-vue/docs typecheck && node apps/docs/scripts/generate-sitemap.mjs && vite build apps/docs --outDir ../../dist --emptyOutDir",
+    "preview": "vite preview apps/docs --outDir ../../dist",
+    "prepare:site": "node scripts/prepare-site.mjs",
+    "build:packages": "pnpm --filter @vfx-ui-vue/core build && pnpm --filter vfx-ui-vue build",
+    "build:all": "pnpm run build:packages && pnpm run build",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test",
     "dev:docs": "pnpm --filter @vfx-ui-vue/docs dev"
   },
+  "dependencies": {
+    "vue": "^3.5.21"
+  },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitejs/plugin-vue-jsx": "^5.1.1",
     "esbuild": "^0.25.0",
     "pngjs": "^7.0.0",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "vite": "^7.1.7",
+    "vue-tsc": "^3.0.8"
   }
 }
