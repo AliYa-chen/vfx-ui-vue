@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "baseUrl": ".",
+    "paths": {
+      "@vfx-ui-vue/core": ["../../packages/core/src/index.ts"],
+      "vfx-ui-vue": ["../../packages/vue/src/index.ts"],
+      "vfx-ui-vue/compat": ["../../packages/vue/src/vueCompat.ts"]
+    },
+    "types": [],
+    "noEmit": true,
+    "allowJs": true,
+    "noUncheckedIndexedAccess": false,
+    "checkJs": false
+  },
+  "include": ["src", "vite.config.ts"]
+}

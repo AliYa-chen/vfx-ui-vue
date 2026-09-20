@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "baseUrl": ".",
+    "paths": {
+      "@vfx-ui-vue/core": ["../core/src/index.ts"]
+    },
+    "types": ["@webgpu/types"],
+    "noEmit": true
+  },
+  "include": ["src", "tests"]
+}

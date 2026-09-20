@@ -1,0 +1,37 @@
+{
+  "name": "@vfx-ui-vue/cli",
+  "version": "0.1.1",
+  "description": "Copy-paste vfx-ui-vue shader components into your project (shadcn registry format).",
+  "license": "MIT",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "vfx-ui-vue": "./bin/cli.mjs"
+  },
+  "files": [
+    "bin"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliYa-chen/vfx-ui-vue.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/AliYa-chen/vfx-ui-vue/issues"
+  },
+  "homepage": "https://vfx.2t.hk",
+  "keywords": [
+    "cli",
+    "shadcn",
+    "registry",
+    "webgpu",
+    "shader",
+    "copy-paste",
+    "code-generation"
+  ]
+}

@@ -1,0 +1,101 @@
+# vfx-ui-vue
+
+> Shader-native visual effect components for Vue 3, rendered via WebGPU (vgpu).
+> Expressive hero and footer sections, GPU backgrounds, and focused DOM interactions for your own content.
+
+## Install
+
+```bash
+npm install vfx-ui-vue
+```
+
+## Component catalog
+
+- [Hero Eclipse](https://vfx.2t.hk/components/hero-eclipse.md): An engraved astronomical dial with a pointer-controlled eclipse.
+- [Hero Contour](https://vfx.2t.hk/components/hero-contour.md): A seeded topographic paper landscape that lifts around the pointer.
+- [Footer Vinyl](https://vfx.2t.hk/components/footer-vinyl.md): A record-sleeve footer with a pointer-rotated vinyl and your own label.
+- [Astra Field](https://vfx.2t.hk/components/astra-field.md): A rotatable spiral galaxy of glowing stars.
+- [Radiant Dots](https://vfx.2t.hk/components/radiant-dots.md): Orbital emitters with jump-flooded distance fields and radiance cascades.
+- [Footer Tidal](https://vfx.2t.hk/components/footer-tidal.md): Copper tidal lines beneath your brand, with pointer-driven currents.
+- [Footer Fold](https://vfx.2t.hk/components/footer-fold.md): A wordmark printed across hinged paper panels that respond to the pointer.
+- [Footer Phosphor](https://vfx.2t.hk/components/footer-phosphor.md): A luminous cell wordmark that disperses around your pointer and settles home.
+- [Spectral Card](https://vfx.2t.hk/components/spectral-card.md): Holographic light and spatial tilt around your own content.
+- [Kinetic Text](https://vfx.2t.hk/components/kinetic-text.md): A pointer-driven force field lifts your words into a soft wave.
+- [Magnetic](https://vfx.2t.hk/components/magnetic.md): A gentle magnetic pull for your own buttons, links, and content.
+- [Wave Background](https://vfx.2t.hk/components/wave-background.md): Three layered sine bands sweeping over a tri-color gradient. GPU-rendered via WebGPU; DOM cannot reproduce it.
+- [Fluid Gradient](https://vfx.2t.hk/components/fluid-gradient.md): Domain-warped fBm noise flowing through a tri-color palette.
+- [Aurora](https://vfx.2t.hk/components/aurora.md): Vertical light curtains driven by fBm perturbation and gaussian bands.
+- [Starfield](https://vfx.2t.hk/components/starfield.md): Hashed star grid with twinkle and slow parallax drift.
+- [Particle Field](https://vfx.2t.hk/components/particle-field.md): Procedural cell-hashed particles with drift and size breathing.
+- [Glass Card](https://vfx.2t.hk/components/glass-card.md): Thick-cut optical glass with two-interface refraction and studio reflections.
+- [Liquid Glass](https://vfx.2t.hk/components/liquid-glass.md): A molten glass annulus with a travelling silhouette and spectral transmission.
+- [Glass Lens](https://vfx.2t.hk/components/glass-lens.md): A biconvex glass lens that magnifies and inverts a printed studio scene.
+- [Black Hole](https://vfx.2t.hk/components/black-hole.md): The vgpu optimized-black-hole pipeline as a component: baked null-geodesic G-buffer, HDR bloom, prefiltered lensed star field, Doppler beaming — a verbatim port (MIT, Vercel).
+- [Mesh Gradient](https://vfx.2t.hk/components/mesh-gradient.md): Voronoi-cell color fields flowing through a curated palette.
+- [Iridescent](https://vfx.2t.hk/components/iridescent.md): Silky thin-film interference colors drifting across the surface.
+- [Vortex](https://vfx.2t.hk/components/vortex.md): Spiral galaxy swirl with star speckles and trailing arms.
+- [Ribbon Field](https://vfx.2t.hk/components/ribbon-field.md): Three Gaussian light ribbons over a dot-matrix grid with bloom and grain — WGSL port of ThreeUI's RibbonField (MIT, Copyright 2026 Meng To).
+- [Fiber Flow](https://vfx.2t.hk/components/fiber-flow.md): Luminous silk fibers streaming through the dark — domain-warped fbm ridge field with pointer parallax (opt-in).
+- [Light Prism](https://vfx.2t.hk/components/light-prism.md): A solid beveled optical prism using Vercel’s complete MIT spectral optics and multi-pass glass pipeline.
+- [Hero Fluid](https://vfx.2t.hk/components/hero-fluid.md): Drop-in hero section: centered headline over a GPU liquid-gradient field with real selectable DOM text, scrim-backed contrast, and a reduced-motion static fallback.
+- [Hero Aurora](https://vfx.2t.hk/components/hero-aurora.md): Drop-in hero section: bottom-left copy anchored under full-bleed aurora curtains rendered per-pixel on the GPU.
+- [Hero Fiber](https://vfx.2t.hk/components/hero-fiber.md): Drop-in hero section: top-weighted headline over luminous silk fibers streaming through the dark.
+- [Hero Globe](https://vfx.2t.hk/components/hero-globe.md): Drop-in split hero: copy on the left, the dot-matrix cobe planet (the globe behind vercel.com) glowing on the right.
+- [Hero Mesh](https://vfx.2t.hk/components/hero-mesh.md): Drop-in hero section: centered headline over a slow Voronoi mesh-gradient field — every frame a different poster.
+- [Hero Iridescent](https://vfx.2t.hk/components/hero-iridescent.md): Drop-in hero section: left copy over a holographic thin-film sheen — the premium product-launch look, computed per-pixel.
+- [Hero Vortex](https://vfx.2t.hk/components/hero-vortex.md): Drop-in hero section: centered headline at the eye of a spiral galaxy with star speckles and trailing arms.
+- [Hero Ribbon](https://vfx.2t.hk/components/hero-ribbon.md): Drop-in split hero: copy left, three Gaussian light ribbons sweeping the right over a dot-matrix grid.
+- [Hero Particles](https://vfx.2t.hk/components/hero-particles.md): Drop-in hero section: top-weighted headline with a badge row over a drifting GPU particle field.
+- [Hero Starfield](https://vfx.2t.hk/components/hero-starfield.md): Drop-in hero section: bottom-left copy under a twinkling hashed star grid with parallax drift.
+- [Hero Black Hole](https://vfx.2t.hk/components/hero-black-hole.md): Drop-in hero section: left copy beside a ray-traced accretion disk with relativistic beaming and a lensed star field.
+- [Chroma Flow](https://vfx.2t.hk/components/chroma-flow.md): Four-edge liquid color field that floods inward toward the direction the cursor sweeps — fbm-noise bleed boundaries driven by pointer velocity.
+- [Hero Chroma](https://vfx.2t.hk/components/hero-chroma.md): Drop-in hero section: bottom-left copy over a four-edge liquid color field that floods toward the cursor's sweep direction.
+
+## Per-component docs (machine-readable)
+
+- https://vfx.2t.hk/components/astra-field.md
+- https://vfx.2t.hk/components/aurora.md
+- https://vfx.2t.hk/components/black-hole.md
+- https://vfx.2t.hk/components/chroma-flow.md
+- https://vfx.2t.hk/components/fiber-flow.md
+- https://vfx.2t.hk/components/fluid-gradient.md
+- https://vfx.2t.hk/components/footer-fold.md
+- https://vfx.2t.hk/components/footer-phosphor.md
+- https://vfx.2t.hk/components/footer-tidal.md
+- https://vfx.2t.hk/components/footer-vinyl.md
+- https://vfx.2t.hk/components/glass-card.md
+- https://vfx.2t.hk/components/glass-lens.md
+- https://vfx.2t.hk/components/hero-aurora.md
+- https://vfx.2t.hk/components/hero-black-hole.md
+- https://vfx.2t.hk/components/hero-chroma.md
+- https://vfx.2t.hk/components/hero-contour.md
+- https://vfx.2t.hk/components/hero-eclipse.md
+- https://vfx.2t.hk/components/hero-fiber.md
+- https://vfx.2t.hk/components/hero-fluid.md
+- https://vfx.2t.hk/components/hero-globe.md
+- https://vfx.2t.hk/components/hero-iridescent.md
+- https://vfx.2t.hk/components/hero-mesh.md
+- https://vfx.2t.hk/components/hero-particles.md
+- https://vfx.2t.hk/components/hero-ribbon.md
+- https://vfx.2t.hk/components/hero-starfield.md
+- https://vfx.2t.hk/components/hero-vortex.md
+- https://vfx.2t.hk/components/iridescent.md
+- https://vfx.2t.hk/components/kinetic-text.md
+- https://vfx.2t.hk/components/light-prism.md
+- https://vfx.2t.hk/components/liquid-glass.md
+- https://vfx.2t.hk/components/magnetic.md
+- https://vfx.2t.hk/components/mesh-gradient.md
+- https://vfx.2t.hk/components/particle-field.md
+- https://vfx.2t.hk/components/radiant-dots.md
+- https://vfx.2t.hk/components/ribbon-field.md
+- https://vfx.2t.hk/components/spectral-card.md
+- https://vfx.2t.hk/components/starfield.md
+- https://vfx.2t.hk/components/vortex.md
+- https://vfx.2t.hk/components/wave-background.md
+
+## Scope guard
+
+This library focuses on customizable hero and footer sections, supported by GPU visuals and focused interactions.
+Hero sample copy is replaceable. Pass title/subtitle or children and configure CTA href/onClick.
+Footer sample copy is replaceable. Configure brand, title, CTA, groups, legal links and copyright. Supply children for your own introduction/navigation layout.
+DOM interaction components do not require WebGPU. This is not a general-purpose UI kit.

@@ -1,0 +1,23 @@
+{
+  "name": "@vfx-ui-vue/docs",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json --noEmit && node scripts/generate-sitemap.mjs && vite build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vfx-ui-vue": "workspace:*",
+    "vue": "^3.5.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitejs/plugin-vue-jsx": "^5.1.1",
+    "typescript": "^5.7.3",
+    "vite": "^7.1.7",
+    "vue-tsc": "^3.0.8"
+  }
+}

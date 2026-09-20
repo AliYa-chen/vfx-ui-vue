@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (() => {
+        const root = document.documentElement;
+        try {
+          const savedTheme = localStorage.getItem("vfx-ui-vue-theme");
+          const mode = savedTheme === "light" || savedTheme === "system" ? savedTheme : "dark";
+          if (mode === "system") root.removeAttribute("data-theme");
+          else root.dataset.theme = mode;
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          root.dataset.scheme = mode === "system" ? (prefersDark ? "dark" : "light") : mode;
+        } catch {
+          root.dataset.theme = "dark";
+          root.dataset.scheme = "dark";
+        }
+      })();
+    </script>
+    <meta
+      name="description"
+      content="Interactive visual components for Vue 3: cinematic WebGPU backgrounds, customizable heroes and footers, kinetic typography, magnetic controls, and spectral cards."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#0a0b0d" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="canonical" href="https://vfx.2t.hk/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="VFX UI VUE" />
+    <meta property="og:title" content="VFX UI VUE — Interactive Visual Components for Vue 3" />
+    <meta property="og:description" content="Interactive visual components for Vue 3: cinematic WebGPU backgrounds, customizable heroes and footers, kinetic typography, magnetic controls, and spectral cards." />
+    <meta property="og:url" content="https://vfx.2t.hk/" />
+    <meta property="og:image" content="https://vfx.2t.hk/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="VFX UI VUE cover: an aurora shader backdrop under the headline “Shaders you can drop into Vue.”" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VFX UI VUE — Interactive Visual Components for Vue 3" />
+    <meta name="twitter:description" content="Interactive visual components for Vue 3: cinematic WebGPU backgrounds, customizable heroes and footers, kinetic typography, magnetic controls, and spectral cards." />
+    <meta name="twitter:image" content="https://vfx.2t.hk/og-cover.png" />
+    <meta name="twitter:image:alt" content="VFX UI VUE cover: an aurora shader backdrop under the headline “Shaders you can drop into Vue.”" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>VFX UI VUE — Interactive Visual Components for Vue 3</title>
+  </head>
+  <body>
+    <!-- THESIS: A hands-on exhibition of expressive Vue 3 components.
+    OWN-WORLD: Graphite cinema, pale mineral work surfaces, cobalt typography and sculptural light; Figtree display with quiet utility type.
+    STORY: Experience a live atmosphere, touch real interactions, customize a component, take its code.
+    FIRST VIEWPORT: Full-frame interactive artwork, large left-aligned headline, one collection action, a small artwork selector.
+    FORM: Interactive material exhibition; direction 7; seed 9fe17e73. Existing Hero artwork remains the visual authority.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

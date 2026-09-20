@@ -1,0 +1,52 @@
+# Particle Field
+
+Procedural cell-hashed particles with drift and size breathing.
+
+## Install
+
+```bash
+npm install vfx-ui-vue
+```
+
+```vue
+<script setup lang="ts">
+import { ParticleField } from "vfx-ui-vue";
+</script>
+
+<template>
+  <ParticleField />
+</template>
+```
+
+## Props
+
+- `density?: number`
+- `speed?: number`
+- `size?: number`
+- `color?: string`
+- `interactive?: boolean`
+- `className?: string`
+- `style?: VfxCanvasProps["style"]`
+- `fallback?: VfxCanvasProps["fallback"]`
+- `children?: VueNode`
+
+## Variants
+
+Import the preset bag and bind it with `v-bind`:
+
+```vue
+<script setup lang="ts">
+import { PARTICLE_PRESETS } from "vfx-ui-vue";
+</script>
+```
+
+## Shader
+
+WGSL source is exported as `PARTICLE_SHADER` — read it to learn how the effect works.
+
+## Notes for agents
+
+- Requires a WebGPU-capable browser; the component degrades gracefully otherwise (use the `fallback` prop).
+- SSR-safe: rendering on the server produces an inert canvas; init happens on mount.
+- `prefers-reduced-motion` freezes animation automatically.
+- Uniforms are plain f32 fields; pass them via `uniforms` — no shader edits needed.
