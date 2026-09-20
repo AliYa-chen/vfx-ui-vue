@@ -32,7 +32,7 @@ export function BrandMark({ compact = false }: { compact?: boolean }) {
           text-length="4400"
           length-adjust="spacingAndGlyphs"
         >
-          VFX UI VUE
+          VFX UI
         </text>
       </svg>
     </span>
