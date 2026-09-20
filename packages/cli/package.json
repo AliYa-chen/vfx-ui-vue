@@ -8,7 +8,11 @@
     "access": "public"
   },
   "bin": {
-    "vfx-ui-vue": "./bin/cli.mjs"
+    "vfx-ui-vue": "bin/cli.mjs"
+  },
+  "scripts": {
+    "prepack": "node --check bin/cli.mjs",
+    "test": "node tests/cli.test.mjs"
   },
   "files": [
     "bin"

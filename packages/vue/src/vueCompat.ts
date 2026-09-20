@@ -10,6 +10,7 @@ import {
   isVNode,
   onUnmounted,
   provide,
+  queuePostFlushCb,
   shallowRef,
   ssrContextKey,
   type Component,
@@ -121,11 +122,12 @@ function hookSlotIndex() {
   if (!state.renderOpen) {
     state.cursor = 0;
     state.renderOpen = true;
-    queueMicrotask(() => {
+    queuePostFlushCb(() => {
       state!.renderOpen = false;
       // Functional components execute during the render phase, too late to
-      // register an initial onMounted hook. A microtask runs after Vue installs
-      // DOM refs, while the SSR context guard keeps server rendering inert.
+      // register a normal onMounted hook. Vue's post-flush queue runs after the
+      // component (including async Suspense branches) has committed DOM refs,
+      // so canvas/GPU effects always see a connected, layout-backed element.
       if (!state!.server) flushStateEffects(state!);
     });
   }

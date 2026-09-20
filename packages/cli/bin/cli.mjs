@@ -9,7 +9,7 @@
  * Zero runtime dependencies by design: the CLI must run anywhere npx runs.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { join, resolve } from "node:path";
+import { resolve, sep } from "node:path";
 import process from "node:process";
 
 const DEFAULT_REGISTRY = "https://vfx.2t.hk/r";
@@ -31,6 +31,9 @@ function parseArgs(argv) {
 }
 
 async function fetchItem(registry, name) {
+  if (!/^[a-z0-9][a-z0-9-]*$/.test(name)) {
+    throw new Error(`invalid component name: ${name}`);
+  }
   const isUrl = /^https?:\/\//.test(registry);
   const url = isUrl ? `${registry.replace(/\/$/, "")}/${name}.json` : resolve(registry, `${name}.json`);
   const res = isUrl ? await fetch(url) : { ok: existsSync(url), json: async () => JSON.parse(readFileSync(url, "utf8")) };
@@ -40,8 +43,16 @@ async function fetchItem(registry, name) {
 
 function writeFiles(item, overwrite) {
   const written = [];
+  const projectRoot = resolve(process.cwd());
   for (const file of item.files ?? []) {
-    const target = join(process.cwd(), file.target ?? file.path);
+    const requested = file.target ?? file.path;
+    if (typeof requested !== "string" || typeof file.content !== "string") {
+      throw new Error("registry item contains an invalid file entry");
+    }
+    const target = resolve(projectRoot, requested);
+    if (!target.startsWith(`${projectRoot}${sep}`)) {
+      throw new Error(`registry file escapes the project directory: ${requested}`);
+    }
     if (existsSync(target) && !overwrite) {
       console.log(`  skip (exists, use --overwrite): ${target}`);
       continue;
@@ -72,6 +83,7 @@ The copied components use Vue TSX. Enable @vitejs/plugin-vue-jsx in Vite.
     return;
   }
 
+  let failed = false;
   for (const name of names) {
     process.stdout.write(`add ${name} … `);
     let item;
@@ -79,12 +91,19 @@ The copied components use Vue TSX. Enable @vitejs/plugin-vue-jsx in Vite.
       item = await fetchItem(registry, name);
     } catch (err) {
       console.log(`failed: ${err.message}`);
+      failed = true;
       continue;
     }
-    const written = writeFiles(item, overwrite);
-    console.log(`${written.length} file(s) → ${TARGET_ROOT}/`);
-    for (const w of written) console.log(`  + ${w}`);
+    try {
+      const written = writeFiles(item, overwrite);
+      console.log(`${written.length} file(s) → ${TARGET_ROOT}/`);
+      for (const w of written) console.log(`  + ${w}`);
+    } catch (err) {
+      console.log(`failed: ${err.message}`);
+      failed = true;
+    }
   }
+  if (failed) process.exitCode = 1;
   console.log("\nNext: npm install vue@^3.5.0 vgpu@0.3.1, enable @vitejs/plugin-vue-jsx, then import from components/vfx/*.");
 }
 

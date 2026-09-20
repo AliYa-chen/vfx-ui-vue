@@ -63,6 +63,9 @@ importers:
 
   packages/core:
     dependencies:
+      '@webgpu/types':
+        specifier: ^0.1.69
+        version: 0.1.72
       vgpu:
         specifier: 0.3.1
         version: 0.3.1
@@ -70,9 +73,6 @@ importers:
       '@types/node':
         specifier: ^22.10.0
         version: 22.20.1
-      '@webgpu/types':
-        specifier: ^0.1.69
-        version: 0.1.72
       typescript:
         specifier: ^5.7.3
         version: 5.9.3
@@ -1685,6 +1685,7 @@ packages:
 
   /@webgpu/types@0.1.72:
     resolution: {integrity: sha512-0cF7RFM2edNoiIS1ODJp0/Gzv4/xSXhwoR0YCza+OWpJWtn4wmo9DvK91aLlH9+uUnwIriP7ZiC3WitmyhuzBw==}
+    dev: false
 
   /alien-signals@3.2.1:
     resolution: {integrity: sha512-I8FjmltrfnDFoZedi5CG8DghVYNhzb/Ijluz7tCSJH0xpd0484Kowhbb1XDYOxfJpU1p5wnM2X54dA+IfGyD1g==}

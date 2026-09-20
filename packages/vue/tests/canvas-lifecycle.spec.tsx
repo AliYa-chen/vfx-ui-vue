@@ -1,6 +1,8 @@
 // @vitest-environment jsdom
 import { beforeEach, afterEach, expect, it, vi } from "vitest";
+import { h, render, Suspense } from "vue";
 import { VfxCanvas } from "../src/VfxCanvas";
+import { lazy } from "../src/vueCompat";
 import {
   createVueTestRoot,
   flushVueEffects,
@@ -78,4 +80,20 @@ it("disposes a renderer that arrives after its canvas unmounted", async () => {
   await flushVueEffects();
   expect(renderer.dispose).toHaveBeenCalledOnce();
   expect(renderer.setUniforms).not.toHaveBeenCalled();
+});
+
+it("initializes on the first mount inside an async Suspense boundary", async () => {
+  const AsyncCanvas = lazy(async () => ({ default: VfxCanvas }));
+  render(
+    h(Suspense, null, {
+      default: () => h(AsyncCanvas, { shader: "test" }),
+      fallback: () => h("span", "Loading"),
+    }),
+    host,
+  );
+
+  await vi.waitFor(() => expect(mock.create).toHaveBeenCalledOnce());
+  resolve(renderer);
+  await flushVueEffects();
+  expect(host.querySelector("canvas")?.isConnected).toBe(true);
 });

@@ -2332,6 +2332,11 @@ export function BlackHole({
       class={className}
       style={{ position: "relative", width: "100%", height: "100%", overflow: "hidden", background: "#020103", ...style }}
     >
+      {!ready && fallback ? (
+        <div style={{ position: "absolute", inset: 0 }} aria-hidden="true">
+          {fallback}
+        </div>
+      ) : null}
       <canvas
         ref={canvasRef}
         style={{
@@ -2340,7 +2345,7 @@ export function BlackHole({
           height: "100%",
           touchAction: "none",
           opacity: ready ? 1 : 0,
-          transition: "opacity 500ms",
+          transition: "opacity 220ms",
         }}
       />
       {content}

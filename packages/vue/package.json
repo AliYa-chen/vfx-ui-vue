@@ -26,6 +26,7 @@
   },
   "scripts": {
     "build": "vue-tsc -p tsconfig.json --noEmit && vite build && vue-tsc -p tsconfig.build.json && node scripts/prepare-declarations.mjs",
+    "prepack": "pnpm run build",
     "typecheck": "vue-tsc -p tsconfig.json --noEmit",
     "test": "vitest run"
   },
