@@ -1,4 +1,4 @@
-# @vfx-ui-vue/core
+# vfx-ui-vue-core
 
 Renderer core for [vfx-ui-vue](https://vfx.2t.hk): the vgpu-backed WebGPU effect renderer with deterministic test support (`vgpu/mock` + Dawn pixel readback). You normally don't install this directly — use [`vfx-ui-vue`](https://www.npmjs.com/package/vfx-ui-vue), which depends on it.
 
@@ -12,7 +12,7 @@ Renderer core for [vfx-ui-vue](https://vfx.2t.hk): the vgpu-backed WebGPU effect
 ## Install
 
 ```bash
-npm install @vfx-ui-vue/core vgpu@0.3.1
+npm install vfx-ui-vue-core vgpu@0.3.1
 ```
 
 ## License

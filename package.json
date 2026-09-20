@@ -1,7 +1,7 @@
 {
   "name": "vfx-ui-vue-workspace",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Shader-native visual effect components for Vue 3, rendered via WebGPU (vgpu).",
   "license": "MIT",
   "packageManager": "pnpm@8.15.9",
@@ -13,7 +13,7 @@
     "build": "node scripts/prepare-site.mjs && pnpm --filter @vfx-ui-vue/docs typecheck && node apps/docs/scripts/generate-sitemap.mjs && vite build apps/docs --outDir ../../dist --emptyOutDir",
     "preview": "vite preview apps/docs --outDir ../../dist",
     "prepare:site": "node scripts/prepare-site.mjs",
-    "build:packages": "pnpm --filter @vfx-ui-vue/core build && pnpm --filter vfx-ui-vue build",
+    "build:packages": "pnpm --filter vfx-ui-vue-core build && pnpm --filter vfx-ui-vue build",
     "build:all": "pnpm run build:packages && pnpm run build",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test",

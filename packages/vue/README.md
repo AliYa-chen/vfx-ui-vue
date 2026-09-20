@@ -34,7 +34,7 @@ Drop-in hero sections: `HeroEclipse` · `HeroContour` · `HeroFluid` · `HeroAur
 
 Live previews, props, and variants for every component: [vfx.2t.hk/components](https://vfx.2t.hk/components). Machine-readable docs: [llms.txt](https://vfx.2t.hk/llms.txt).
 
-Prefer copy-paste over an npm dependency? Use [the registry](https://vfx.2t.hk/r) via `npx @vfx-ui-vue/cli add <name>`.
+Prefer copy-paste over an npm dependency? Use [the registry](https://vfx.2t.hk/r) via `npx vfx-ui-vue-cli add <name>`.
 
 ## License
 

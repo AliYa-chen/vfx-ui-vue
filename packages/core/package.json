@@ -1,6 +1,6 @@
 {
-  "name": "@vfx-ui-vue/core",
-  "version": "0.1.1",
+  "name": "vfx-ui-vue-core",
+  "version": "0.1.2",
   "description": "Renderer core for vfx-ui-vue: vgpu-backed WebGPU effect renderer with deterministic test support.",
   "license": "MIT",
   "type": "module",

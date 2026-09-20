@@ -1,6 +1,6 @@
 {
   "name": "vfx-ui-vue",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Shader-native visual effect components for Vue 3. WebGPU via vgpu.",
   "license": "MIT",
   "type": "module",
@@ -39,7 +39,7 @@
     "vue": ">=3.5"
   },
   "devDependencies": {
-    "@vfx-ui-vue/core": "workspace:*",
+    "vfx-ui-vue-core": "workspace:*",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vitejs/plugin-vue-jsx": "^5.1.1",
     "jsdom": "^30.0.1",

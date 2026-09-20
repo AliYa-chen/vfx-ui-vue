@@ -1,6 +1,6 @@
 {
-  "name": "@vfx-ui-vue/cli",
-  "version": "0.1.1",
+  "name": "vfx-ui-vue-cli",
+  "version": "0.1.2",
   "description": "Copy-paste vfx-ui-vue shader components into your project (shadcn registry format).",
   "license": "MIT",
   "type": "module",

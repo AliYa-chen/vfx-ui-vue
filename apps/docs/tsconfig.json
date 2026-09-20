@@ -5,7 +5,7 @@
     "jsxImportSource": "vue",
     "baseUrl": ".",
     "paths": {
-      "@vfx-ui-vue/core": ["../../packages/core/src/index.ts"],
+      "vfx-ui-vue-core": ["../../packages/core/src/index.ts"],
       "vfx-ui-vue": ["../../packages/vue/src/index.ts"],
       "vfx-ui-vue/compat": ["../../packages/vue/src/vueCompat.ts"]
     },

@@ -41,7 +41,7 @@ The library focuses on visual atmosphere and content interaction, not general UI
 ## Copy-paste instead of install
 
 ```bash
-npx @vfx-ui-vue/cli add wave-background liquid-glass
+npx vfx-ui-vue-cli add wave-background liquid-glass
 npm install vue@^3.5.0 vgpu@0.3.1
 ```
 

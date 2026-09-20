@@ -10,7 +10,7 @@ import {
   type VueTestRoot,
 } from "./helpers";
 const mock = vi.hoisted(() => ({ create: vi.fn() }));
-vi.mock("@vfx-ui-vue/core", () => ({ createVfxRenderer: mock.create }));
+vi.mock("vfx-ui-vue-core", () => ({ createVfxRenderer: mock.create }));
 let root: VueTestRoot;
 let host: HTMLDivElement;
 let reduced = false;

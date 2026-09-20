@@ -324,7 +324,7 @@ function read(p) {
 }
 
 /**
- * The copy-paste bundle has no @vfx-ui-vue/core — inline its sources into the
+ * The copy-paste bundle has no vfx-ui-vue-core — inline its sources into the
  * top of VfxCanvas.tsx so the emitted file is self-contained (npm users get
  * the same behavior via the package dependency).
  */
@@ -339,10 +339,10 @@ function inlinedVfxCanvas() {
     )
     .join("\n\n");
   const canvas = read(join(vueSrc, "VfxCanvas.tsx")).replace(
-    /import\s*\{[^}]*\}\s*from\s*["']@vfx-ui-vue\/core["'];?\n/,
+    /import\s*\{[^}]*\}\s*from\s*["']vfx-ui-vue-core["'];?\n/,
     "",
   );
-  return `/* @vfx-ui-vue/core (inlined by registry/build.mjs — do not edit) */\n${core}\n${canvas}`;
+  return `/* vfx-ui-vue-core (inlined by registry/build.mjs — do not edit) */\n${core}\n${canvas}`;
 }
 
 /**

@@ -2,9 +2,9 @@
 /**
  * vfx-ui-vue CLI — copy-paste shader components (shadcn registry format).
  *
- *   npx @vfx-ui-vue/cli add wave-background
- *   npx @vfx-ui-vue/cli add wave-background fluid-gradient --overwrite
- *   npx @vfx-ui-vue/cli add wave-background --registry ./registry/dist/r
+ *   npx vfx-ui-vue-cli add wave-background
+ *   npx vfx-ui-vue-cli add wave-background fluid-gradient --overwrite
+ *   npx vfx-ui-vue-cli add wave-background --registry ./registry/dist/r
  *
  * Zero runtime dependencies by design: the CLI must run anywhere npx runs.
  */
@@ -70,7 +70,7 @@ async function main() {
     console.log(`vfx-ui-vue — shader effect components for Vue 3 (WebGPU via vgpu)
 
 Usage:
-  npx @vfx-ui-vue/cli add <component> [more...] [--overwrite] [--registry <url|dir>]
+  npx vfx-ui-vue-cli add <component> [more...] [--overwrite] [--registry <url|dir>]
 
 Components: wave-background, fluid-gradient, aurora, starfield, particle-field,
 glass-card, liquid-glass, footer-tidal, footer-fold, footer-phosphor

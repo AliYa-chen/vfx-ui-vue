@@ -1,5 +1,5 @@
 import { childrenFromSlots, useEffect, useRef, useState, type CSSProperties, type VueNode } from "./vueCompat";
-import { createVfxRenderer } from "@vfx-ui-vue/core";
+import { createVfxRenderer } from "vfx-ui-vue-core";
 
 // Public canvas types stay local so installing vfx-ui-vue does not require
 // publishing or installing the workspace's renderer implementation package.

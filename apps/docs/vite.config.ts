@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: "@vfx-ui-vue/core",
+        find: "vfx-ui-vue-core",
         replacement: fileURLToPath(new URL("../../packages/core/src/index.ts", import.meta.url)),
       },
       {

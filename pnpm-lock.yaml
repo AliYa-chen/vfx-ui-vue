@@ -95,9 +95,6 @@ importers:
         specifier: 0.3.1
         version: 0.3.1
     devDependencies:
-      '@vfx-ui-vue/core':
-        specifier: workspace:*
-        version: link:../core
       '@vitejs/plugin-vue':
         specifier: ^6.0.1
         version: 6.0.9(vite@7.3.6)(vue@3.5.43)
@@ -113,6 +110,9 @@ importers:
       typescript:
         specifier: ^5.7.3
         version: 5.9.3
+      vfx-ui-vue-core:
+        specifier: workspace:*
+        version: link:../core
       vite:
         specifier: ^7.1.7
         version: 7.3.6(@types/node@22.20.1)
